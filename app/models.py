@@ -7,10 +7,12 @@ class User(UserMixin,db.Model):
 
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(20),index = True, unique=True,nullable = False)
-    password = db.Column(db.String(60),nullable = False)
+    pass_secure = db.Column(db.String(60),nullable = False)
     email = db.Column(db.String(120),unique = True,index = True)
     ideas = db.relationship('Idea',backref = 'owner',lazy='dynamic')
     profile_pic = db.Column(db.String(20),nullable = False,default = 'default.jpg')
+
+    
 
     def __repr__(self):
         return f'User ("{self.username}","{self.profile_pic}")'
