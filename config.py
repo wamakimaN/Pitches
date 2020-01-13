@@ -4,7 +4,8 @@ class Config:
     '''
     General configuration parent class
     '''
-
+    SECRET_KEY = 'thisismysecret'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moses:123456@localhost/ideabank'
 
 
 
