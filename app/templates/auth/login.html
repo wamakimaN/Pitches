@@ -1,0 +1,21 @@
+{%extends 'bootstrap/base.html'%}
+
+{%import 'bootstrap/wtf.html' as wtf%}
+
+{%block title%}
+Login
+{%endblock%}
+
+{%block content%}
+
+<div class="container">
+  <form method="GET" action="/login" class="form-signin">
+  <h2 class="form-signin-heading">Log in</h2>
+  {{form.hidden_tag()}}
+  {{wtf.form_field(form.username)}}
+  {{wtf.form_field(form.pass_secure)}}
+    <button class="btn btn-lg btn-primary btn-block">log in</button>
+  </form>
+</div>
+
+{%endblock%}
