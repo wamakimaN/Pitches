@@ -1,25 +1,27 @@
 {% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
+
 <div class="container">
-<div class="row">
-<!-- displaying  Username-->
-  <div class="col-md-4">
-    <h3> {{user.username| capitalize}} </h3>
-
-    <!--Displaying user bio-->
-      <p> {{user.username| capitalize}} has no bio </p>
+  <div class="row">
+    <div class="profile col-md-4">
+      <h3> {{user.username| capitalize}} </h3>
+      {% if user.profile_pic %}
+      <img src="{{url_for('static',filename=user.profile_pic)}}" alt="" class="img-thumbnail">
+      {%else%}
+      <p>No profile picture</p>
+      {% endif %}
+    </div>
+    <div class="pitches col-md-8">
+      {{wtf.quick_form(idea_form)}}
+      {% for idea in ideas %}
+      <div class="card">
+        <h1>{{idea.title}}</h1>
+        <p>{{idea.body}}</p>
+      </div>
+      {%endfor%}
+    </div>
   </div>
-
-  <!--Display profile photo-->
-  <div class="col-md-4">
-
-    {% if user.profile_pic %}
-    <img src="{{url_for('static',filename=user.profile_pic)}}" alt="" class="img-thumbnail">
-    {%else%}
-    <p>No profile picture</p>
-    {% endif %}
-  </div>
-</div>
 </div>
 {% endblock %}

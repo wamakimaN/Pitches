@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from. import login_manager
+from datetime import datetime
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -39,11 +40,17 @@ class Idea(db.Model):
 
     id = db.Column(db.Integer,primary_key = True)
     title = db.Column(db.String(100),nullable = False)
-    # date_posted = db.Column(db.string())
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
     body = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable = False)
     
+    
+
+    @classmethod
+    def get_ideas(cls,id):
+        ideas = Idea.query.filter_by(id=id).all()
+        return ideas
 
 
     def __repr__(self):
-        return f'User ("{self.title}","{self.user_id}")'
+        return f'User ("{self.title}","{self.body}")'
