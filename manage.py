@@ -9,9 +9,12 @@ app = create_app('production')
 
 manager = Manager(app)
 migrate = Migrate(app,db)
+manager.add_command('db',MigrateCommand)
+
+
 
 manager.add_command('server',Server)
-manager.add_command('db',MigrateCommand)
+
 
 @manager.shell
 def make_shell_context():
