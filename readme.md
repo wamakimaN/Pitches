@@ -21,7 +21,7 @@ this is the first page a user sees
 
 * Login page.
 
-![source page](static/login.png)
+![source page](app/static/login.png)
 
 users sign in here if they have an account.
 
@@ -29,7 +29,7 @@ users sign in here if they have an account.
 
 * Signup page.
 
-![source page](static/signup.png)
+![source page](app/static/signup.png)
 
 if one does not have a profile they make one here
 
@@ -37,7 +37,7 @@ if one does not have a profile they make one here
 
 * Profile page.
 
-![source page](static/profile.png)
+![source page](app/static/profile.png)
 
 users can now view pitches after login.
 
