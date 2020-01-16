@@ -4,11 +4,13 @@ from app.models import User,Idea
 from  flask_migrate import Migrate, MigrateCommand
 
 # create app instance
-app = create_app('development')
 app = create_app('production')
+app = create_app('development')
 
 manager = Manager(app)
 migrate = Migrate(app,db)
+
+manager.add_command('server',Server)
 manager.add_command('db',MigrateCommand)
 
 
