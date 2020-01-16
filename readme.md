@@ -14,13 +14,14 @@ Users have the option of making a pitch or just view pitches from other users.
 
 * landing page
 
+
 this is the first page a user sees
 
 ---
 
 * Login page.
 
-![source page](app/static/images/login.png)
+![source page](static/login.png)
 
 users sign in here if they have an account.
 
@@ -28,7 +29,7 @@ users sign in here if they have an account.
 
 * Signup page.
 
-![source page](app/static/images/signup.png)
+![source page](static/signup.png)
 
 if one does not have a profile they make one here
 
@@ -36,7 +37,7 @@ if one does not have a profile they make one here
 
 * Profile page.
 
-![source page](app/static/images/profile.png)
+![source page](static/profile.png)
 
 users can now view pitches after login.
 
