@@ -14,8 +14,6 @@ Users have the option of making a pitch or just view pitches from other users.
 
 * landing page
 
-![Landing page](static/images/landing.png)
-
 this is the first page a user sees
 
 ---
